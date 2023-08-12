@@ -2,7 +2,7 @@ import axios from "axios";
 
 const EMPLOYEE_API_BASE_URL = "https://api.geekyhack.com/api/v1/employees";
 
-export default class EmployeeService {
+class EmployeeService {
 
   getEmployees() {
     return axios.get(EMPLOYEE_API_BASE_URL);
@@ -24,3 +24,6 @@ export default class EmployeeService {
     return axios.delete(EMPLOYEE_API_BASE_URL + "/" + id);
   }
 }
+
+const EmployeeServiceC = new EmployeeService();
+export default EmployeeServiceC;
