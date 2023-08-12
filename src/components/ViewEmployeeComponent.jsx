@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import EmployeeService_class from "../services/EmployeeService";
+import EmployeeService from "../services/EmployeeService";
 
 export default class ViewEmployeeComponent extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ export default class ViewEmployeeComponent extends Component {
   }
   //get data by id and assign to employee state object
   componentDidMount() {
-    EmployeeService_class.getEmployeeById(this.state.id).then((res) => {
+    EmployeeService.getEmployeeById(this.state.id).then((res) => {
       this.setState({ employee: res.data });
     });
   }
