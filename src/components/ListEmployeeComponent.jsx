@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import EmployeeService from "../services/EmployeeService";
+import EmployeeService_class from "../services/EmployeeService";
 
 class ListEmployeeComponent extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class ListEmployeeComponent extends Component {
   }
   // delete employee by id
   deleteEmployeeById(id) {
-    EmployeeService.deleteById(id).then((res) => {
+    EmployeeService_class.deleteById(id).then((res) => {
       //filter employees list to reduce api call
 
       //res.header('Access-Control-Allow-Origin', '*');
@@ -41,7 +41,7 @@ class ListEmployeeComponent extends Component {
 
   // fill employees array on componenet mount
   componentDidMount() {
-    EmployeeService.getEmployees().then((res) => {
+    EmployeeService_class.getEmployees().then((res) => {
       this.setState({ employees: res.data });
     });
   }

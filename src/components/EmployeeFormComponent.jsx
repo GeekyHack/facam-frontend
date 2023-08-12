@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import EmployeeService from "../services/EmployeeService";
+import EmployeeService_class from "../services/EmployeeService";
 
 export default class EmployeeFormComponent extends Component {
 
@@ -25,7 +25,7 @@ export default class EmployeeFormComponent extends Component {
     if (this.state.id === undefined) {
       return;
     } else {
-      EmployeeService.getEmployeeById(this.state.id).then((res) => {
+      EmployeeService_class.getEmployeeById(this.state.id).then((res) => {
 
         let employee = res.data;
 
@@ -51,7 +51,7 @@ export default class EmployeeFormComponent extends Component {
     };
     console.log("Employee:" + JSON.stringify(employee));
     if (this.state.id === undefined) {
-      EmployeeService.addEmployee(employee).then((res) => {
+      EmployeeService_class.addEmployee(employee).then((res) => {
 //         res.header('Access-Control-Allow-Origin', '*');
 //         res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
 //         res.header('Access-Control-Allow-Headers',
@@ -59,7 +59,7 @@ export default class EmployeeFormComponent extends Component {
         this.props.history.push("/employees");
       });
     } else {
-      EmployeeService.updateEmployee(employee).then((res) => {
+      EmployeeService_class.updateEmployee(employee).then((res) => {
         this.props.history.push("/employees");
       });
     }
