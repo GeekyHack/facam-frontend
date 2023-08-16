@@ -7,8 +7,9 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 COPY package.json /usr/src/app/package.json
 
 RUN npm install
-RUN npm install next@latest react@latest react-dom@latest
-RUN npm install react-scripts@3.4.1 -g
+RUN npm install react
+RUN npm install --save-dev @babel/plugin-proposal-private-property-in-objec
+#RUN npm install react-scripts@3.4.1 -g
 
 # 소스를 작업폴더로 복사하고 빌드
 COPY . /usr/src/app
