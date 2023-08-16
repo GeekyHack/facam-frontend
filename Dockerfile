@@ -5,6 +5,10 @@ RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 COPY package.json /usr/src/app/package.json
+
+npm install 17.0.1
+npm install next@latest react@latest react-dom@latest
+
 RUN npm install
 #RUN npm install react-scripts@3.4.1 -g --silent
 
