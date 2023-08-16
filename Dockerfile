@@ -6,7 +6,6 @@ WORKDIR /usr/src/app
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 COPY package.json /usr/src/app/package.json
 
-RUN npm install 17.0.1
 RUN npm install next@latest react@latest react-dom@latest
 
 RUN npm install
