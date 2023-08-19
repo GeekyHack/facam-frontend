@@ -5,12 +5,8 @@ RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 COPY package.json /usr/src/app/package.json
-
-RUN npm set registry http://registry.npmjs.org/
 RUN npm install
-RUN npm install react
-RUN npm install --save-dev @babel/plugin-proposal-private-property-in-object
-#RUN npm install react-scripts@3.4.1 -g
+RUN npm install react-scripts@3.4.1
 
 # 소스를 작업폴더로 복사하고 빌드
 COPY . /usr/src/app
